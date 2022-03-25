@@ -239,12 +239,12 @@ void Delete_expired(Event *eve)
                 pE++;
             }
             pE = eve +1;
-            for (int j = 0; j < count; j++)
+            for (int j = 0; j <= count; j++)
             {
                 eve[j] = *pE;
                 pE++;
             }
-            pE->date = pE->endtime = pE->name[0] =pE->starttime = 0;
+            
         }
         
         eve++;
