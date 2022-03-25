@@ -216,13 +216,13 @@ void print_now_event(Event *eve)
    
 }
 
-/********//*待完成*/
+
 void Delete_expired(Event *eve)
 {
     time_t now;
 	now = time(&now);//获取当前时间
     
-    //数组删除
+    
     printf("Deleting:\n");
     while (eve->starttime)
     {
@@ -230,7 +230,7 @@ void Delete_expired(Event *eve)
         {
             
             print_event(eve);
-
+	    //数组元素删除，把后续元素前移
             int count = 0;
             Event *pE = eve+1;
             while (pE->starttime)
@@ -247,7 +247,8 @@ void Delete_expired(Event *eve)
             
         }
         
-        eve++;
+	else    
+        	eve++;
     }
 
 }
